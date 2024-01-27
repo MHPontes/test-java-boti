@@ -8,9 +8,10 @@ import org.springframework.stereotype.Component
 class ProductViewMapper : Mapper<Product, ProductView> {
   override fun map(p: Product): ProductView {
     return ProductView(
-//      id = p.id,
       sku = p.sku,
       name = p.name,
+      inventory = p.inventory,
+      isMarketable = p.isMarketable
     )
   }
 }
