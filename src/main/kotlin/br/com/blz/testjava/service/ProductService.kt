@@ -2,20 +2,21 @@ package br.com.blz.testjava.service
 
 import br.com.blz.testjava.dto.NewProductForm
 import br.com.blz.testjava.dto.ProductView
-import br.com.blz.testjava.mapper.ProductFormMapper
+//import br.com.blz.testjava.mapper.ProductFormMapper
 import br.com.blz.testjava.mapper.ProductViewMapper
+import br.com.blz.testjava.mapper.toProduct
 import br.com.blz.testjava.model.Product
 import org.springframework.stereotype.Service
 
 @Service
 class ProductService(
-  private var products: List<Product>,
+  private var products: MutableList<Product>,
   private val productViewMapper: ProductViewMapper,
-  private val productFormMapper: ProductFormMapper,
+//  private val productFormMapper: ProductFormMapper,
 ) {
-  init {
-    products = mutableListOf()
-  }
+//  init {
+//    products = mutableListOf()
+//  }
 
 //  fun getProducts(): List<ProductView> {
 //    return products.stream().map { p ->
@@ -30,9 +31,10 @@ class ProductService(
   }
 
   fun createProduct(form: NewProductForm): ProductView {
-    val product = productFormMapper.map(form)
+  //  val product = productFormMapper.map(form)
+    val product = form.toProduct() //Inline function
    // product.id = products.size.toLong() + 1
-    products.plus(product)
+    products.add(product)
     return productViewMapper.map(product)
   }
 
