@@ -14,6 +14,7 @@ object NewProductFormTemplate {
       inventory = createValidNewInventoryForm()
     )
   }
+
   fun createValidNewProductFormUpdate(): NewProductForm {
     return NewProductForm(
       sku = 123,
@@ -21,6 +22,7 @@ object NewProductFormTemplate {
       inventory = createValidNewInventoryForm()
     )
   }
+
   fun createValidNewProductFormSkuDif(): NewProductForm {
     return NewProductForm(
       sku = 777,
@@ -29,25 +31,12 @@ object NewProductFormTemplate {
     )
   }
 
-  fun createInvalidNewProductForm(): NewProductForm {
-    return NewProductForm(
-      sku = 123, // valor inválido
-      name = "",
-      inventory = createEmptyNewInventoryForm() // inválido, pois deve ter pelo menos um armazém
-    )
-  }
-
-
   private fun createValidNewInventoryForm(): NewInventoryForm {
     return NewInventoryForm(
       warehouses = mutableListOf(
         createValidNewWarehouseForm()
       )
     )
-  }
-
-  private fun createEmptyNewInventoryForm(): NewInventoryForm {
-    return NewInventoryForm(warehouses = mutableListOf())
   }
 
   private fun createValidNewWarehouseForm(): NewWarehouseForm {

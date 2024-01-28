@@ -1,7 +1,6 @@
 package br.com.blz.testjava.mapper
 
 import br.com.blz.testjava.dto.NewProductForm
-import br.com.blz.testjava.dto.UpdateProductForm
 import br.com.blz.testjava.model.Inventory
 import br.com.blz.testjava.model.Product
 import br.com.blz.testjava.model.Warehouse

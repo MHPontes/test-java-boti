@@ -1,3 +1,0 @@
-#spring.datasource.url=jdbc:postgresql://localhost:5432/bd-test-boti
-#spring.datasource.username=boti
-#spring.datasource.password=banco123

@@ -29,7 +29,10 @@ class ProductController(private val service: ProductService) {
   }
 
   @PutMapping("/{sku}")
-  fun updateProduct(@PathVariable @Valid sku: Int, @RequestBody @Valid form: NewProductForm): ResponseEntity<ProductView> {
+  fun updateProduct(
+    @PathVariable @Valid sku: Int,
+    @RequestBody @Valid form: NewProductForm
+  ): ResponseEntity<ProductView> {
     val productView = service.updateProduct(sku, form)
     return ResponseEntity.ok(productView)
   }

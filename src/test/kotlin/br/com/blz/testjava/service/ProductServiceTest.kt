@@ -153,6 +153,7 @@ class ProductServiceTest {
     assertFalse(capturedProducts.contains(existingProduct), "Product should be removed from the list")
     assertTrue(capturedProducts.isEmpty(), "List should be empty after deletion")
   }
+
   @Test
   fun `should not delete product when SKU does not exist`() {
     val nonExistentSku = 999

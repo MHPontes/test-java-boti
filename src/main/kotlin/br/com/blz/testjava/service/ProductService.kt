@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ProductService(
-  private val products: MutableList<Product>,
+  private var products: MutableList<Product>,
   private val productViewMapper: ProductViewMapper,
   private val productFormMapper: ProductFormMapper,
 ) {
@@ -37,9 +37,10 @@ class ProductService(
 
     if (form.sku != sku) throw IllegalArgumentException("Updating SKU $sku is not allowed")
 
-    val updatedProducts = products.filterNot { it.sku == existingProduct.sku }
+    products = products.filterNot { it.sku == existingProduct.sku }
       .plus(productFormMapper.map(form))
       .toMutableList()
+
     return productViewMapper.map(productFormMapper.map(form))
   }
 
