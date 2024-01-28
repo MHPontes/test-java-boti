@@ -14,6 +14,20 @@ object NewProductFormTemplate {
       inventory = createValidNewInventoryForm()
     )
   }
+  fun createValidNewProductFormUpdate(): NewProductForm {
+    return NewProductForm(
+      sku = 123,
+      name = "Product Name Updated",
+      inventory = createValidNewInventoryForm()
+    )
+  }
+  fun createValidNewProductFormSkuDif(): NewProductForm {
+    return NewProductForm(
+      sku = 777,
+      name = "Product Name Updated",
+      inventory = createValidNewInventoryForm()
+    )
+  }
 
   fun createInvalidNewProductForm(): NewProductForm {
     return NewProductForm(
