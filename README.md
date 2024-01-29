@@ -86,6 +86,7 @@ Crie endpoints para as seguintes ações:
 
 ### Detalhes do teste/case boticario - Mateus Pontes
 
+
 - Optei por fazer o desafio em Kotlin, pois acredito que novas features serão sempre priorizadas o desenvolvimento em Kotlin.
 Também é uma linguagem a qual tenho me exposto mais nos ultimos meses.
 - Decidi fazer o tratamento de exception através da classe ExceptionHandler para que o usuario final, tenha retornos de exceções mais amigaveis e claras.
@@ -93,3 +94,6 @@ Também é uma linguagem a qual tenho me exposto mais nos ultimos meses.
 - Utilizei os mappers para fazer a conversão do form e do view, como forma de abstração de código e logica para ficar mais organizado.
 - Para os testes unitarios decidi usar MockK, pois estou me familiarizando em testes unitarios utilizando essa biblioteca. 
 - Ainda sobre testes unitarios, decidi criar templates para os cenarios necessarios, pois acho uma forma de deixar os testes unitarios mais limpos e legiveis e também facilita testes futuros pensando em escalabilidade da feature.
+
+
+[![My Skills](https://skillicons.dev/icons?i=kotlin,spring,idea,maven&theme=light)](https://skillicons.dev)
