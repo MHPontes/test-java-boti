@@ -1,5 +1,8 @@
 ### Backend Test
 
+[Ir para Detalhes do teste/case boticario - Mateus Pontes](#detalhes-do-testecase-boticario---mateus-pontes)
+
+---
 [![Build Status](https://travis-ci.com/belezanaweb/test-java.svg?branch=master)](https://travis-ci.com/belezanaweb/test-java)
 
 [![codecov](https://codecov.io/gh/belezanaweb/test-java/branch/master/graph/badge.svg)](https://codecov.io/gh/belezanaweb/test-java)
@@ -43,31 +46,31 @@ Com a seguinte representação de produto:
 
 Crie endpoints para as seguintes ações:
 
-- [ ] Criação de produto onde o payload será o json informado acima (exceto as propriedades **isMarketable** e **inventory.quantity**)
+- [x] Criação de produto onde o payload será o json informado acima (exceto as propriedades **isMarketable** e **inventory.quantity**)
 
-- [ ] Edição de produto por **sku**
+- [x] Edição de produto por **sku**
 
-- [ ] Recuperação de produto por **sku**
+- [x] Recuperação de produto por **sku**
 
-- [ ] Deleção de produto por **sku**
+- [x] Deleção de produto por **sku**
 
 ### Requisitos
 
 
-- [ ] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **inventory.quantity**
+- [x] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **inventory.quantity**
 
         A propriedade inventory.quantity é a soma da quantity dos warehouses
 
-- [ ] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **isMarketable**
+- [x] Toda vez que um produto for recuperado por **sku** deverá ser calculado a propriedade: **isMarketable**
 
         Um produto é marketable sempre que seu inventory.quantity for maior que 0
 
-- [ ] Caso um produto já existente em memória tente ser criado com o mesmo **sku** uma exceção deverá ser lançada
+- [x] Caso um produto já existente em memória tente ser criado com o mesmo **sku** uma exceção deverá ser lançada
 
         Dois produtos são considerados iguais se os seus skus forem iguais
 
 
-- [ ] Ao atualizar um produto, o antigo deve ser sobrescrito com o que esta sendo enviado na requisição
+- [x] Ao atualizar um produto, o antigo deve ser sobrescrito com o que esta sendo enviado na requisição
 
         A requisição deve receber o sku e atualizar com o produto que tbm esta vindo na requisição
 
@@ -77,3 +80,16 @@ Crie endpoints para as seguintes ações:
 - Não é necessário adicionar swagger (não será avaliado)
 - Sinta-se a vontade para fazer o código em ```groovy```, ```kotlin``` ou ```scala``` se preferir, utilizamos bastante aqui
 - Testes são sempre bem-vindos :smiley:
+
+----
+
+
+### Detalhes do teste/case boticario - Mateus Pontes
+
+- Optei por fazer o desafio em Kotlin, pois acredito que novas features serão sempre priorizadas o desenvolvimento em Kotlin.
+Também é uma linguagem a qual tenho me exposto mais nos ultimos meses.
+- Decidi fazer o tratamento de exception através da classe ExceptionHandler para que o usuario final, tenha retornos de exceções mais amigaveis e claras.
+- Sobre a Service, inclui validações, como a verificação de SKU positivo, e tratamento adequado de exceções, como NotFoundException. Visando a clareza, modularidade e boas práticas de desenvolvimento.
+- Utilizei os mappers para fazer a conversão do form e do view, como forma de abstração de código e logica para ficar mais organizado.
+- Para os testes unitarios decidi usar MockK, pois estou me familiarizando em testes unitarios utilizando essa biblioteca. 
+- Ainda sobre testes unitarios, decidi criar templates para os cenarios necessarios, pois acho uma forma de deixar os testes unitarios mais limpos e legiveis e também facilita testes futuros pensando em escalabilidade da feature.
